@@ -51,16 +51,15 @@ function renderRoleGroup(label, personIds, roleKey) {
   const names = personIds.map(id => {
     const person = people.find(p => p.id === id);
     const isFiltered = currentPersonFilter !== 'all' && currentPersonFilter === id;
-    return `<span class="name-tag ${isFiltered ? 'highlight' : ''}">${person ? person.name : id}</span>`;
+    return `<li class="name-tag ${isFiltered ? 'highlight' : ''}">${person ? person.name : id}</li>`;
   }).join('');
 
   return `
     <div class="role-group">
       <div class="role-label">
-        <i style="background: var(--accent-${roleKey})"></i>
         ${label}
       </div>
-      <div class="names-list">${names}</div>
+      <ul class="names-list" aria-label="${label} list">${names}</ul>
     </div>
   `;
 }
@@ -88,6 +87,7 @@ function renderTable() {
         <td>
           <span class="raci-badge ${isFiltered ? 'glow' : ''}" style="background: var(--accent-${role.toLowerCase()})" title="${roleDefinitions[role].title}">
             ${role}
+            <span class="sr-only">${roleDefinitions[role].title}</span>
           </span>
         </td>
       `;
@@ -95,7 +95,7 @@ function renderTable() {
 
     return `
       <tr>
-        <td style="font-weight: 600; color: white;">${area.label}</td>
+        <th scope="row" style="font-weight: 600; color: var(--primary); text-align: left; text-transform: none;">${area.label}</th>
         ${cells.join('')}
       </tr>
     `;
@@ -105,10 +105,10 @@ function renderTable() {
     <table>
       <thead>
         <tr>
-          ${headers.map(h => {
+          ${headers.map((h, index) => {
     const person = people.find(p => p.name === h);
     const isFiltered = person && currentPersonFilter === person.id;
-    return `<th class="${isFiltered ? 'header-highlight' : ''}">${h}</th>`;
+    return `<th scope="col" class="${isFiltered ? 'header-highlight' : ''}">${h}</th>`;
   }).join('')}
         </tr>
       </thead>
@@ -140,8 +140,13 @@ function populatePersonFilter() {
 // Event Listeners
 viewToggle.addEventListener('click', (e) => {
   if (e.target.classList.contains('tab-btn')) {
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    // Update active tab state
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-selected', 'false');
+    });
     e.target.classList.add('active');
+    e.target.setAttribute('aria-selected', 'true');
 
     currentView = e.target.dataset.view;
     render();
@@ -151,6 +156,15 @@ viewToggle.addEventListener('click', (e) => {
 personFilter.addEventListener('change', (e) => {
   currentPersonFilter = e.target.value;
   render();
+
+  // Announce the change
+  const count = getFilteredAreas().length;
+  const personName = e.target.options[e.target.selectedIndex].text;
+  const message = `Showing ${count} areas for ${personName}`;
+  const announcer = document.getElementById('a11y-announcer');
+  if (announcer) {
+    announcer.textContent = message;
+  }
 });
 
 // Init

@@ -1,23 +1,24 @@
 export const people = [
     { id: 'blake', name: 'Blake' },
-    { id: 'gemma', name: 'Gemma' },
-    { id: 'stefan', name: 'Stefan' },
+    { id: 'gemma', name: 'Jemma' },
+    { id: 'stefin', name: 'Stefin' },
     { id: 'trey', name: 'Trey' },
     { id: 'amanda', name: 'Amanda' },
     { id: 'helen', name: 'Helen' },
     { id: 'chris', name: 'Chris' },
     { id: 'brother_j', name: 'Brother J' },
     { id: 'ck', name: 'CK' },
+    { id: 'michelle', name: 'Michelle' },
 ];
 
 export const areas = [
     {
-        id: 'budget',
-        label: 'Budget',
+        id: 'fundraising',
+        label: 'Fundraising',
         r: ['blake'],
         a: ['gemma'],
-        c: ['stefan', 'trey', 'amanda', 'helen'],
-        i: ['chris', 'brother_j', 'ck']
+        c: ['stefin', 'trey', 'amanda'],
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
     },
     {
         id: 'support',
@@ -25,47 +26,55 @@ export const areas = [
         r: ['amanda'],
         a: ['blake'],
         c: ['helen', 'trey', 'gemma'],
-        i: ['chris']
+        i: ['chris', 'stefin', 'brother_j', 'ck', 'michelle']
     },
     {
         id: 'training',
         label: 'Training',
         r: ['amanda'],
         a: ['blake'],
-        c: ['trey', 'gemma'],
-        i: ['chris', 'brother_j', 'ck']
+        c: ['trey', 'gemma', 'helen'],
+        i: ['chris', 'brother_j', 'ck', 'stefin', 'michelle']
     },
     {
         id: 'feature_buildout',
         label: 'Feature Buildout',
         r: ['trey'],
         a: ['blake'],
-        c: ['chris', 'stefan', 'amanda', 'gemma'],
-        i: []
+        c: ['chris', 'stefin', 'gemma', 'ck', 'amanda'],
+        i: ['helen', 'brother_j', 'michelle']
     },
     {
         id: 'fixes',
         label: 'Fixes',
         r: ['trey'],
         a: ['blake'],
-        c: ['trey', 'amanda'],
-        i: ['chris']
+        c: ['trey', 'ck', 'amanda', 'chris'],
+        i: ['gemma', 'stefin', 'helen', 'brother_j', 'michelle']
     },
     {
         id: 'roadmap',
         label: 'Roadmap',
-        r: ['stefan'],
+        r: ['stefin'],
         a: ['blake'],
         c: ['gemma', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
     },
     {
         id: 'accessibility',
         label: 'Accessibility',
         r: ['ck'],
         a: ['blake'],
-        c: ['amanda', 'helen'],
-        i: ['chris']
+        c: ['helen', 'brother_j', 'trey'],
+        i: ['chris', 'gemma', 'stefin', 'amanda', 'michelle']
+    },
+    {
+        id: 'budget',
+        label: 'Budget',
+        r: ['stefin'],
+        a: ['blake'],
+        c: ['gemma', 'trey', 'amanda'],
+        i: ['helen', 'chris', 'brother_j', 'ck', 'michelle']
     }
 ];
 

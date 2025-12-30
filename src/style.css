@@ -1,19 +1,22 @@
 :root {
-  --primary: #6366f1;
-  --bg: #0f172a;
-  --bg-darker: #020617;
-  --card-bg: rgba(30, 41, 59, 0.7);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
-  --accent-r: #10b981;
+  --primary: #001E62;
+  /* UIC Blue */
+  /* UIC Red */
+  --accent-r: #D50032;
   --accent-a: #f59e0b;
-  --accent-c: #3b82f6;
-  --accent-i: #6b7280;
-  --font: 'Outfit', sans-serif;
+  --accent-c: #001E62;
+  --accent-i: #64748b;
+  --bg: #ffffff;
+  --bg-darker: #f8fafc;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --font: 'Inter', sans-serif;
   --container-width: 1200px;
-  --radius: 16px;
-  --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -28,10 +31,7 @@ body {
   font-family: var(--font);
   line-height: 1.6;
   min-height: 100vh;
-  background-image:
-    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
-  background-attachment: fixed;
+  border-top: 8px solid var(--accent-r);
 }
 
 .container {
@@ -41,47 +41,42 @@ body {
 }
 
 header {
-  padding: 6rem 0 4rem;
+  padding: 4rem 0 3rem;
   text-align: center;
-  background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), var(--bg)), url('/hero-bg.png');
-  background-size: cover;
-  background-position: center;
+  background-color: var(--bg);
   border-bottom: 1px solid var(--card-border);
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.logo-accent {
-  background: linear-gradient(135deg, var(--primary), #a855f7);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  font-weight: 700;
-  color: white;
-  letter-spacing: 1px;
+.logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
 }
 
 .logo-text {
   font-size: 1.25rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--text-muted);
+  letter-spacing: 1px;
+  color: var(--primary);
 }
 
 h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(to right, #ffffff, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
@@ -113,45 +108,58 @@ h1 {
 }
 
 #person-filter {
-  background: var(--bg-darker);
+  background: var(--bg);
   color: var(--text);
   border: 1px solid var(--card-border);
   padding: 0.6rem 2rem 0.6rem 1rem;
-  border-radius: 8px;
+  border-radius: 6px;
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+#person-filter:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+  border-color: var(--primary);
 }
 
 .tabs {
   background: var(--bg-darker);
-  padding: 0.4rem;
-  border-radius: 12px;
+  padding: 0.25rem;
+  border-radius: 8px;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.25rem;
   border: 1px solid var(--card-border);
 }
 
 .tab-btn {
-  padding: 0.6rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   border: none;
   background: transparent;
   color: var(--text-muted);
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
 }
 
 .tab-btn.active {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tab-btn:hover:not(.active) {
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 /* Grid View */
@@ -163,14 +171,13 @@ h1 {
 
 .raci-card {
   background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   padding: 2rem;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
   position: relative;
+  box-shadow: var(--shadow);
 }
 
 .raci-card::before {
@@ -178,22 +185,25 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 100%;
+  width: 100%;
+  height: 4px;
   background: var(--primary);
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .raci-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
 }
 
 .raci-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid var(--card-border);
   padding-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .role-group {
@@ -204,31 +214,32 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
 }
 
-.role-label i {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
 
 .names-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .name-tag {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0.3rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-darker);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--card-border);
+  color: var(--text);
 }
 
 /* Table View */
@@ -237,7 +248,7 @@ h1 {
   background: var(--card-bg);
   border-radius: var(--radius);
   border: 1px solid var(--card-border);
-  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
 }
 
 table {
@@ -248,7 +259,7 @@ table {
 
 th,
 td {
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem;
   text-align: left;
   border-bottom: 1px solid var(--card-border);
 }
@@ -256,21 +267,29 @@ td {
 th {
   background: var(--bg-darker);
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--primary);
   text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background-color: #f8fafc;
 }
 
 .raci-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: white;
 }
 
@@ -285,7 +304,9 @@ th {
 
 .legend h2 {
   margin-bottom: 2rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .legend-grid {
@@ -298,18 +319,21 @@ th {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.75rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--text);
+  font-weight: 600;
 }
 
 .legend-item p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .circle {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
 
@@ -318,61 +342,37 @@ footer {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+  border-top: 1px solid var(--card-border);
+  margin-top: 4rem;
 }
 
 .name-tag.highlight {
-  background: var(--primary);
+  background: var(--accent-r);
   color: white;
-  border-color: var(--primary);
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  border-color: var(--accent-r);
+  box-shadow: 0 1px 3px rgba(213, 0, 50, 0.3);
 }
 
-@keyframes fadeInBlur {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
-    filter: blur(10px);
+    transform: translateY(10px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 }
 
 .raci-card {
-  animation: fadeInBlur 0.6s ease-out forwards;
-}
-
-.raci-card:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.raci-card:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.raci-card:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.raci-card:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
-.raci-card:nth-child(6) {
-  animation-delay: 0.5s;
-}
-
-.raci-card:nth-child(7) {
-  animation-delay: 0.6s;
+  animation: fadeIn 0.4s ease-out forwards;
 }
 
 .raci-badge.glow {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 2px white, 0 0 0 4px var(--accent-r);
   transform: scale(1.1);
-  border: 2px solid white;
+  background-color: var(--accent-r) !important;
 }
 
 th.header-highlight {
@@ -387,21 +387,21 @@ th.header-highlight {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-darker);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--card-border);
-  border-radius: 10px;
+  background: #cbd5e1;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: #94a3b8;
 }
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .container {
@@ -411,4 +411,17 @@ th.header-highlight {
   .legend {
     padding: 2rem;
   }
+}
+
+/* Utility for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

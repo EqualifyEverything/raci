@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSF | Roles & Responsibilities</title>
+  <meta name="description"
+    content="Explore the Open Source Fund (OSF) roles and responsibilities through an interactive RACI chart." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <span class="logo-accent">OSF</span>
+          <span class="logo-text">Roles & Responsibilities</span>
+        </div>
+        <h1>Responsibility Matrix</h1>
+        <p class="subtitle">A RACI breakdown of key OSF work areas and team assignments.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <div class="tabs" id="view-toggle">
+          <button class="tab-btn active" data-view="grid">Grid View</button>
+          <button class="tab-btn" data-view="table">Table View</button>
+        </div>
+
+        <div class="filter-group">
+          <label for="person-filter">Filter by Person:</label>
+          <select id="person-filter">
+            <option value="all">Everyone</option>
+            <!-- Options populated by JS -->
+          </select>
+        </div>
+      </section>
+
+      <section id="raci-container" class="view-grid">
+        <!-- RACI Content will be injected here -->
+      </section>
+
+      <section class="legend">
+        <h2>RACI Definitions</h2>
+        <div class="legend-grid" id="legend-grid">
+          <!-- Legend will be injected here -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 Open Source Fund. Built with transparency.</p>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

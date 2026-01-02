@@ -10,6 +10,7 @@ export const people = [
     { id: 'ck', name: 'CK' },
     { id: 'michelle', name: 'Michelle' },
     { id: 'michael', name: 'Michael' },
+    { id: 'lucy', name: 'Lucy' },
 ];
 
 export const areas = [
@@ -19,15 +20,15 @@ export const areas = [
         r: ['blake'],
         a: ['gemma'],
         c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
     },
     {
         id: 'support',
         label: 'Support',
-        r: ['michael'],
-        a: ['helen'],
-        c: ['trey', 'gemma', 'blake', 'amanda'],
-        i: ['chris', 'stefin', 'brother_j', 'ck', 'michelle']
+        r: ['helen'],
+        a: ['gemma'],
+        c: ['michael', 'blake'],
+        i: ['chris', 'stefin', 'brother_j', 'ck', 'michelle', 'lucy', 'trey', 'amanda']
     },
     {
         id: 'training',
@@ -35,38 +36,38 @@ export const areas = [
         r: ['amanda'],
         a: ['blake'],
         c: ['trey', 'gemma', 'helen'],
-        i: ['chris', 'brother_j', 'ck', 'stefin', 'michelle', 'michael']
+        i: ['chris', 'brother_j', 'ck', 'stefin', 'michelle', 'michael', 'lucy']
     },
     {
         id: 'feature_buildout',
         label: 'Feature Buildout',
-        r: ['trey'],
-        a: ['blake'],
-        c: ['chris', 'stefin', 'gemma', 'ck', 'amanda'],
-        i: ['helen', 'brother_j', 'michelle', 'michael']
+        r: ['chris'],
+        a: ['trey'],
+        c: ['blake', 'stefin', 'gemma', 'ck', 'amanda'],
+        i: ['helen', 'brother_j', 'michelle', 'michael', 'lucy']
     },
     {
         id: 'fixes',
         label: 'Fixes',
-        r: ['trey'],
-        a: ['blake'],
-        c: ['michael', 'chris', 'ck', 'amanda', 'helen'],
-        i: ['gemma', 'stefin', 'brother_j', 'michelle']
+        r: ['chris'],
+        a: ['trey'],
+        c: ['blake', 'michael', 'ck', 'amanda', 'helen'],
+        i: ['gemma', 'stefin', 'brother_j', 'michelle', 'lucy']
     },
     {
         id: 'project_management',
-        label: 'Project Management',
+        label: 'Project Delivery',
         r: ['stefin'],
         a: ['blake'],
         c: ['gemma', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
     },
     {
         id: 'accessibility',
         label: 'Accessibility',
         r: ['ck'],
         a: ['blake'],
-        c: ['helen', 'brother_j', 'trey'],
+        c: ['helen', 'brother_j', 'trey', 'lucy'],
         i: ['chris', 'gemma', 'stefin', 'amanda', 'michelle', 'michael']
     },
     {
@@ -75,7 +76,7 @@ export const areas = [
         r: ['blake'],
         a: ['gemma'],
         c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
     },
     {
         id: 'release',
@@ -83,7 +84,7 @@ export const areas = [
         r: ['amanda'],
         a: ['blake'],
         c: ['gemma', 'trey', 'helen', 'stefin'],
-        i: ['chris', 'brother_j', 'ck', 'michelle', 'michael']
+        i: ['chris', 'brother_j', 'ck', 'michelle', 'michael', 'lucy']
     },
     {
         id: 'community',
@@ -91,7 +92,7 @@ export const areas = [
         r: ['stefin'],
         a: ['blake'],
         c: ['gemma', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
     },
     {
         id: 'milestones',
@@ -99,7 +100,7 @@ export const areas = [
         r: ['blake'],
         a: ['gemma'],
         c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
     },
     {
         id: 'operations',
@@ -107,7 +108,7 @@ export const areas = [
         r: ['michelle'],
         a: ['blake'],
         c: ['stefin', 'gemma', 'helen'],
-        i: ['trey', 'amanda', 'chris', 'brother_j', 'ck', 'michael']
+        i: ['trey', 'amanda', 'chris', 'brother_j', 'ck', 'michael', 'lucy']
     }
 ];
 

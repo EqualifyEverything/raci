@@ -100,6 +100,14 @@ export const areas = [
         a: ['gemma'],
         c: ['stefin', 'trey', 'amanda'],
         i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
+    },
+    {
+        id: 'operations',
+        label: 'Operations',
+        r: ['michelle'],
+        a: ['blake'],
+        c: ['stefin', 'gemma', 'helen'],
+        i: ['trey', 'amanda', 'chris', 'brother_j', 'ck', 'michael']
     }
 ];
 

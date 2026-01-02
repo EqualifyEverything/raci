@@ -10,13 +10,16 @@ let currentView = 'grid';
 let currentPersonFilter = 'all';
 
 function getFilteredAreas() {
-  if (currentPersonFilter === 'all') return areas;
-  return areas.filter(area =>
-    area.r.includes(currentPersonFilter) ||
-    area.a.includes(currentPersonFilter) ||
-    area.c.includes(currentPersonFilter) ||
-    area.i.includes(currentPersonFilter)
-  );
+  const filtered = currentPersonFilter === 'all'
+    ? [...areas]
+    : areas.filter(area =>
+      area.r.includes(currentPersonFilter) ||
+      area.a.includes(currentPersonFilter) ||
+      area.c.includes(currentPersonFilter) ||
+      area.i.includes(currentPersonFilter)
+    );
+
+  return filtered.sort((a, b) => a.label.localeCompare(b.label));
 }
 
 function render() {
@@ -35,7 +38,7 @@ function renderGrid() {
 
   container.innerHTML = filtered.map(area => `
     <article class="raci-card">
-      <h3>${area.label} ${area.tbd ? '<span style="font-size: 0.7rem; vertical-align: middle; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; margin-left: 8px; opacity: 0.7;">DETAILED ASSIGNMENTS PENDING</span>' : ''}</h3>
+      <h3>${area.label} ${area.tbd ? '<span style="font-size: 0.7rem; vertical-align: middle; background: #e2e8f0; color: #475569; padding: 2px 6px; border-radius: 4px; margin-left: 8px; font-weight: 600;">PENDING</span>' : ''}</h3>
       
       ${renderRoleGroup('Responsible', area.r, 'r')}
       ${renderRoleGroup('Accountable', area.a, 'a')}
@@ -85,9 +88,8 @@ function renderTable() {
 
       return `
         <td>
-          <span class="raci-badge ${isFiltered ? 'glow' : ''}" style="background: var(--accent-${role.toLowerCase()})" title="${roleDefinitions[role].title}">
+          <span class="raci-badge ${isFiltered ? 'glow' : ''}" style="background: var(--accent-${role.toLowerCase()})" aria-label="${roleDefinitions[role].title}">
             ${role}
-            <span class="sr-only">${roleDefinitions[role].title}</span>
           </span>
         </td>
       `;
@@ -168,6 +170,19 @@ personFilter.addEventListener('change', (e) => {
 });
 
 // Init
-populatePersonFilter();
-render();
-renderLegend();
+function init() {
+  populatePersonFilter();
+
+  // Check for person in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const personParam = urlParams.get('person');
+  if (personParam && people.some(p => p.id === personParam)) {
+    currentPersonFilter = personParam;
+    personFilter.value = personParam;
+  }
+
+  render();
+  renderLegend();
+}
+
+init();

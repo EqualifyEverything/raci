@@ -9,6 +9,7 @@ export const people = [
     { id: 'brother_j', name: 'Brother J' },
     { id: 'ck', name: 'CK' },
     { id: 'michelle', name: 'Michelle' },
+    { id: 'michael', name: 'Michael' },
 ];
 
 export const areas = [
@@ -23,9 +24,9 @@ export const areas = [
     {
         id: 'support',
         label: 'Support',
-        r: ['amanda'],
-        a: ['blake'],
-        c: ['helen', 'trey', 'gemma'],
+        r: ['michael'],
+        a: ['helen'],
+        c: ['trey', 'gemma', 'blake', 'amanda'],
         i: ['chris', 'stefin', 'brother_j', 'ck', 'michelle']
     },
     {
@@ -49,12 +50,12 @@ export const areas = [
         label: 'Fixes',
         r: ['trey'],
         a: ['blake'],
-        c: ['trey', 'ck', 'amanda', 'chris'],
-        i: ['gemma', 'stefin', 'helen', 'brother_j', 'michelle']
+        c: ['michael', 'chris', 'ck', 'amanda', 'helen'],
+        i: ['gemma', 'stefin', 'brother_j', 'michelle']
     },
     {
-        id: 'roadmap',
-        label: 'Roadmap',
+        id: 'project_management',
+        label: 'Project Management',
         r: ['stefin'],
         a: ['blake'],
         c: ['gemma', 'trey', 'amanda'],
@@ -71,10 +72,34 @@ export const areas = [
     {
         id: 'budget',
         label: 'Budget',
+        r: ['blake'],
+        a: ['gemma'],
+        c: ['stefin', 'trey', 'amanda'],
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
+    },
+    {
+        id: 'release',
+        label: 'Release',
+        r: ['amanda'],
+        a: ['blake'],
+        c: ['gemma', 'trey', 'helen', 'stefin'],
+        i: ['chris', 'brother_j', 'ck', 'michelle', 'michael']
+    },
+    {
+        id: 'community',
+        label: 'Community',
         r: ['stefin'],
         a: ['blake'],
         c: ['gemma', 'trey', 'amanda'],
-        i: ['helen', 'chris', 'brother_j', 'ck', 'michelle']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
+    },
+    {
+        id: 'milestones',
+        label: 'Milestones',
+        r: ['blake'],
+        a: ['gemma'],
+        c: ['stefin', 'trey', 'amanda'],
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
     }
 ];
 

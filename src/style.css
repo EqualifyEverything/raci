@@ -1,11 +1,18 @@
 :root {
   --primary: #001E62;
-  /* UIC Blue */
-  /* UIC Red */
-  --accent-r: #D50032;
+  /* UIC Blue - keeping as primary for heritage */
+  --equalify-green: #10b981;
+
+  /* RACI Colors (Matching data.js) */
+  --accent-r: #10b981;
+  /* Responsible - Green */
   --accent-a: #f59e0b;
-  --accent-c: #001E62;
-  --accent-i: #64748b;
+  /* Accountable - Amber */
+  --accent-c: #3b82f6;
+  /* Consulted - Blue */
+  --accent-i: #6b7280;
+  /* Informed - Gray */
+
   --bg: #ffffff;
   --bg-darker: #f8fafc;
   --card-bg: #ffffff;
@@ -38,6 +45,7 @@ body {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 2rem;
+  padding-bottom: 4rem;
 }
 
 header {

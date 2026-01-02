@@ -19,7 +19,7 @@ export const areas = [
         r: ['blake'],
         a: ['gemma'],
         c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
     },
     {
         id: 'support',
@@ -35,7 +35,7 @@ export const areas = [
         r: ['amanda'],
         a: ['blake'],
         c: ['trey', 'gemma', 'helen'],
-        i: ['chris', 'brother_j', 'ck', 'stefin', 'michelle']
+        i: ['chris', 'brother_j', 'ck', 'stefin', 'michelle', 'michael']
     },
     {
         id: 'feature_buildout',
@@ -43,7 +43,7 @@ export const areas = [
         r: ['trey'],
         a: ['blake'],
         c: ['chris', 'stefin', 'gemma', 'ck', 'amanda'],
-        i: ['helen', 'brother_j', 'michelle']
+        i: ['helen', 'brother_j', 'michelle', 'michael']
     },
     {
         id: 'fixes',
@@ -59,7 +59,7 @@ export const areas = [
         r: ['stefin'],
         a: ['blake'],
         c: ['gemma', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
     },
     {
         id: 'accessibility',
@@ -67,7 +67,7 @@ export const areas = [
         r: ['ck'],
         a: ['blake'],
         c: ['helen', 'brother_j', 'trey'],
-        i: ['chris', 'gemma', 'stefin', 'amanda', 'michelle']
+        i: ['chris', 'gemma', 'stefin', 'amanda', 'michelle', 'michael']
     },
     {
         id: 'budget',
@@ -75,7 +75,7 @@ export const areas = [
         r: ['blake'],
         a: ['gemma'],
         c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
     },
     {
         id: 'release',
@@ -91,7 +91,7 @@ export const areas = [
         r: ['stefin'],
         a: ['blake'],
         c: ['gemma', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
     },
     {
         id: 'milestones',
@@ -99,7 +99,7 @@ export const areas = [
         r: ['blake'],
         a: ['gemma'],
         c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle']
+        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael']
     },
     {
         id: 'operations',

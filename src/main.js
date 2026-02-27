@@ -325,6 +325,13 @@ window.openSOPModal = function (sopId) {
 
   modal.showModal();
   updateUrl(sopId);
+
+  // Initialize and run Mermaid for diagrams
+  if (window.mermaid) {
+    window.mermaid.run({
+      nodes: document.querySelectorAll('.mermaid')
+    });
+  }
 }
 
 document.getElementById('close-modal').addEventListener('click', () => {
@@ -554,6 +561,15 @@ window.addEventListener('popstate', () => {
 
 // Init
 function init() {
+  // Initialize Mermaid
+  if (window.mermaid) {
+    window.mermaid.initialize({
+      startOnLoad: false,
+      theme: 'default',
+      securityLevel: 'loose',
+    });
+  }
+
   populatePersonFilter();
   populateProjectFilter();
 

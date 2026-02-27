@@ -834,6 +834,15 @@ th.header-highlight {
   font-size: 1.1rem;
 }
 
+.sop-document-content mark {
+  background-color: #fef08a;
+  /* yellow-200 */
+  color: #1e293b;
+  /* dark slate */
+  padding: 0 0.2rem;
+  border-radius: 4px;
+}
+
 .sop-document-content p {
   margin-bottom: 1rem;
 }
@@ -846,4 +855,15 @@ th.header-highlight {
 
 .sop-document-content li {
   margin-bottom: 0.5rem;
+}
+
+.sop-document-content .mermaid {
+  display: flex;
+  justify-content: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  margin: 1.5rem 0;
+  overflow-x: auto;
 }

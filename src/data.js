@@ -218,19 +218,42 @@ export const sops = [
         reviewCadence: 'Ongoing',
         content: `
 <h3>1) Overview</h3>
-<p>This SOP overarchingly details how to manage the areas in this RACI chart. Each responsible party can create an SOP with those accountable for their RACI area. SOPs are agreements laying out clear objectives and communication strategies that the Responsible and Accountable parties agree to.</p>
+<p>This SOP overarchingly details how to manage the areas in this RACI chart. <mark><strong>The SOP's primary focus is to minimize micromanagement to maximize the performance of team projects.</strong></mark> Each responsible party can create an SOP with those accountable for their RACI area. SOPs are agreements laying out clear objectives and communication strategies that the Responsible and Accountable parties agree to.</p>
 <h3>2) Communication Procedures</h3>
-<p>Those Responsible and Accountable will assumed to be in regular contact on the development of the area. The Responsible person should be prepared to present updates and get feedback from those accountable, and the presentation should be supported by those accountable.</p>
+<ol>
+    <li>Maintain regular contact between the Responsible and Accountable parties on the development of the area.</li>
+    <li>Prepare the Responsible person to present updates and receive feedback from those accountable.</li>
+    <li>Ensure the presentation is supported by those accountable.</li>
+</ol>
 <h3>3) Success and Failure Verification</h3>
 <p><strong>Success:</strong> Team operations remain strictly within the communication procedures outlined in this document.</p>
 <p><strong>Failure:</strong> Procedures are circumnavigated, leading to operational inefficiency.</p>
 <p><strong>Failure Examples:</strong> Additional meetings or communication required by parties who are neither Responsible nor Accountable for the specific area.</p>
 <h3>4) Remediation</h3>
-<ul>
+<p>In the event of failure, the team is expected to work down this sequential list:</p>
+<ol>
     <li>Address the system that created the bug causing the failure.</li>
     <li>Increase consultation meeting regularity for the impacted area.</li>
-    <li>Update RACI items to ensure clarity and alignment with operational needs.</li>
-</ul>
+    <li>Update RACI items to ensure clarity and alignment with operational needs. Updating the RACI is the final end of the remediation process and should be prevented at all costs.</li>
+</ol>
+<h3>5) Procedure Flow Diagram</h3>
+<pre class="mermaid">
+graph TD
+    Start((Operational Start)) --> Process[Maintain Regular Contact<br/>R & A Parties]
+    Process --> Prep[Responsible Prepares Update<br/>& Solicits Feedback]
+    Prep --> Presentation[Presentation Supported by<br/>Accountable Party]
+    Presentation --> SuccessCheck{Procedures Followed?}
+    
+    SuccessCheck -- Yes --> Success([Success: Efficient Operations])
+    SuccessCheck -- No --> Failure([Failure: Procedures Circumnavigated])
+    
+    Failure --> Remediation1[1. Address System Bug<br/>Causing Failure]
+    Remediation1 --> Remediation2[2. Increase Consultation<br/>Meeting Regularity]
+    Remediation2 --> Remediation3[3. Update RACI Items<br/>Final End - Prevent if possible]
+    
+    Success --> Start
+    Remediation3 --> Start
+</pre>
         `
     },
     {

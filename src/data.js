@@ -180,6 +180,18 @@ export const areas = [
         a: ['blake'],
         c: ['gemma'],
         i: ['jason']
+    },
+    {
+        id: 'ail_platform_buildout',
+        label: 'Platform Buildout',
+        project: 'ai_leaders',
+        objective: 'Direct the initial buildout, support, and transition of the AI Leaders platform to another engineering team on May 14.',
+        meetingRegularity: 'Weekly (Tuesdays)',
+        informedRegularity: 'On updates',
+        r: ['chris'],
+        a: ['blake'],
+        c: ['stefin', 'gemma'],
+        i: ['jason']
     }
 ];
 
@@ -219,7 +231,7 @@ export const sops = [
         reportRegularity: 'On Updates',
         content: `
 <h3>1) Overview</h3>
-<p>This SOP overarchingly details how to manage the areas in this RACI chart. <mark><strong>The SOP's primary focus is to minimize micromanagement to maximize the performance of team projects.</strong></mark> Each responsible party can create an SOP with those accountable for their RACI area. SOPs are agreements laying out clear objectives and communication strategies that the Responsible and Accountable parties agree to.</p>
+<p>This SOP overarchingly details how to manage the areas in this RACI chart. <mark><strong>The SOP's primary focus is to empower individual ownership and streamline communication to maximize the performance of team projects.</strong></mark> Each responsible party can create an SOP with those accountable for their RACI area. SOPs are agreements laying out clear objectives and communication strategies that the Responsible and Accountable parties agree to.</p>
 <h3>2) Communication Procedures</h3>
 <ol>
     <li>Responsible and Accountable parties <strong>collaborate continuously</strong> on the development of the area.</li>

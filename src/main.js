@@ -100,7 +100,7 @@ function renderGrid() {
                 <li>
                   <button class="sop-text-link" onclick="openSOPModal('${sop.id}')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
-                    <span>${sop.title}</span>
+                    <span>${getProjectName(sop.project)}: ${sop.title}</span>
                   </button>
                 </li>
               `).join('')}
@@ -263,7 +263,6 @@ function renderSOPTable() {
         <td style="font-weight: 600;">
           <button class="sop-table-link" data-sop-id="${sop.id}">${getProjectName(sop.project)}: ${sop.title}</button>
         </td>
-        <td>${area ? area.label : sop.area}</td>
         <td>${area ? area.label : sop.area}</td>
         <td>${getPersonName(sop.responsible)}</td>
         <td>${getPersonName(sop.accountable)}</td>

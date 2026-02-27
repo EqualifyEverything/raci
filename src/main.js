@@ -29,8 +29,8 @@ function getFilteredAreas() {
 
   return filtered.sort((a, b) => {
     // Pinned content always first
-    if (a.id === 'dase_team_management') return -1;
-    if (b.id === 'dase_team_management') return 1;
+    if (a.id === 'dae_team_management') return -1;
+    if (b.id === 'dae_team_management') return 1;
 
     if (currentSort === 'project') {
       const projA = getProjectName(a.project);
@@ -93,8 +93,8 @@ function renderGrid() {
     const areaSops = sops.filter(s => s.area === area.id && s.project === area.project);
 
     return `
-      <article class="raci-card ${area.id === 'dase_team_management' ? 'pinned-card' : ''}">
-        ${area.id === 'dase_team_management' ? '<div class="pin-badge" title="Pinned Area"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg></div>' : ''}
+      <article class="raci-card ${area.id === 'dae_team_management' ? 'pinned-card' : ''}">
+        ${area.id === 'dae_team_management' ? '<div class="pin-badge" title="Pinned Area"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg></div>' : ''}
         <div class="card-header">
           <h3>
             ${getProjectName(area.project)} ${area.label} 
@@ -190,7 +190,7 @@ function renderTable() {
             <div class="area-label-group">
               <span class="p-name">${getProjectName(area.project)}</span>
               <span class="a-label">
-                ${area.id === 'dase_team_management' ? '<svg class="pin-icon-inline" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; color: var(--accent-r);"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg>' : ''}
+                ${area.id === 'dae_team_management' ? '<svg class="pin-icon-inline" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; color: var(--accent-r);"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg>' : ''}
                 ${area.label}
               </span>
               ${area.objective ? `<p class="table-area-objective">${area.objective}</p>` : ''}

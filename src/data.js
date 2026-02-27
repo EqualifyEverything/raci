@@ -5,20 +5,17 @@ export const people = [
     { id: 'trey', name: 'Trey' },
     { id: 'new_support_hire', name: 'New Support Hire' },
     { id: 'amanda', name: 'Amanda' },
-    { id: 'helen', name: 'Helen' },
     { id: 'chris', name: 'Chris' },
     { id: 'brother_j', name: 'Brother J' },
     { id: 'ck', name: 'CK' },
     { id: 'michelle', name: 'Michelle' },
-    { id: 'michael', name: 'Michael' },
-    { id: 'lucy', name: 'Lucy' },
     { id: 'asya', name: 'Asya' },
     { id: 'jason', name: 'Jason' },
     { id: 'dylan', name: 'Dylan' }
 ];
 
 export const projects = [
-    { id: 'dase', name: 'DASE' },
+    { id: 'dae', name: 'DAE' },
     { id: 'equalify', name: 'Equalify' },
     { id: 'ai_leaders', name: 'AI Leaders' },
     { id: 'open_source_fund', name: 'Open Source Fund' }
@@ -26,9 +23,9 @@ export const projects = [
 
 export const areas = [
     {
-        id: 'dase_team_management',
+        id: 'dae_team_management',
         label: 'Team Management',
-        project: 'dase',
+        project: 'dae',
         objective: 'Overarchingly manage the areas in this RACI chart.',
         meetingRegularity: 'Monthly (1st Mondays)',
         informedRegularity: 'On updates',
@@ -36,7 +33,7 @@ export const areas = [
         r: ['blake'],
         a: ['gemma'],
         c: ['trey', 'chris', 'stefin'],
-        i: ['new_support_hire', 'amanda', 'helen', 'brother_j', 'ck', 'michelle', 'michael', 'lucy', 'asya', 'dylan']
+        i: ['new_support_hire', 'amanda', 'brother_j', 'ck', 'michelle', 'asya', 'dylan']
     },
     {
         id: 'support',
@@ -234,10 +231,10 @@ export const roleDefinitions = {
 
 export const sops = [
     {
-        id: 'sop_dase_management',
+        id: 'sop_dae_management',
         title: 'Procedure and Management',
-        project: 'dase',
-        area: 'dase_team_management',
+        project: 'dae',
+        area: 'dae_team_management',
         responsible: 'blake',
         accountable: 'gemma',
         effectiveDate: '2026-02-27?',

@@ -60,7 +60,6 @@ Click a name below to see their specific roles and responsibilities in the inter
 | **Chris** | [View Roles](https://equalifyeverything.github.io/raci/?person=chris) |
 | **CK** | [View Roles](https://equalifyeverything.github.io/raci/?person=ck) |
 | **Jemma** | [View Roles](https://equalifyeverything.github.io/raci/?person=gemma) |
-| **Helen** | [View Roles](https://equalifyeverything.github.io/raci/?person=helen) |
 | **Michelle** | [View Roles](https://equalifyeverything.github.io/raci/?person=michelle) |
 | **Stefin** | [View Roles](https://equalifyeverything.github.io/raci/?person=stefin) |
 | **Trey** | [View Roles](https://equalifyeverything.github.io/raci/?person=trey) |

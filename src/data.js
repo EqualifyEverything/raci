@@ -209,13 +209,13 @@ export const roleDefinitions = {
 export const sops = [
     {
         id: 'sop_dase_management',
-        title: 'DASE Procedure and Management',
+        title: 'Procedure and Management',
         project: 'dase',
         area: 'dase_team_management',
         responsible: 'blake',
         accountable: 'gemma',
         effectiveDate: '2026-02-27',
-        reviewCadence: 'Ongoing',
+        reviewCadence: 'Monthly (1st Mondays)',
         reportRegularity: 'On Updates',
         content: `
 <h3>1) Overview</h3>

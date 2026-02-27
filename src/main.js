@@ -234,7 +234,7 @@ function renderSOPGrid() {
         <div class="sop-list">
           ${areaSOPs.map(sop => `
             <button class="sop-item-btn" data-sop-id="${sop.id}">
-              <span class="sop-title">${sop.title}</span>
+              <span class="sop-title">${getProjectName(sop.project)}: ${sop.title}</span>
               <span class="sop-meta">Responsible: ${getPersonName(sop.responsible)}</span>
             </button>
           `).join('')}
@@ -261,13 +261,13 @@ function renderSOPTable() {
     return `
       <tr>
         <td style="font-weight: 600;">
-          <button class="sop-table-link" data-sop-id="${sop.id}">${sop.title}</button>
+          <button class="sop-table-link" data-sop-id="${sop.id}">${getProjectName(sop.project)}: ${sop.title}</button>
         </td>
         <td>${area ? area.label : sop.area}</td>
-        <td>${getProjectName(sop.project)}</td>
+        <td>${area ? area.label : sop.area}</td>
         <td>${getPersonName(sop.responsible)}</td>
         <td>${getPersonName(sop.accountable)}</td>
-        <td>${sop.effectiveDate || 'N/A'}</td>
+        <td>${sop.reviewCadence || 'N/A'}</td>
       </tr>
     `;
   });
@@ -278,10 +278,9 @@ function renderSOPTable() {
         <tr>
           <th scope="col">Title</th>
           <th scope="col">Area</th>
-          <th scope="col">Project</th>
           <th scope="col">Responsible</th>
           <th scope="col">Accountable</th>
-          <th scope="col">Effective Date</th>
+          <th scope="col">Update Meeting</th>
         </tr>
       </thead>
       <tbody>
@@ -309,14 +308,14 @@ window.openSOPModal = function (sopId) {
   const titleEl = document.getElementById('sop-modal-title');
   const bodyEl = document.getElementById('sop-modal-body');
 
-  titleEl.textContent = sop.title;
+  titleEl.textContent = `${getProjectName(sop.project)}: ${sop.title}`;
   bodyEl.innerHTML = `
     <div class="sop-meta-header">
       <span><strong>Responsible:</strong> ${getPersonName(sop.responsible)}</span>
       <span><strong>Approved By:</strong> ${getPersonName(sop.accountable)}</span>
-      <span><strong>Project:</strong> ${getProjectName(sop.project)}</span>
       <span><strong>Effective:</strong> ${sop.effectiveDate}</span>
-      <span><strong>Review:</strong> ${sop.reviewCadence}</span>
+      <span><strong>Update Meeting:</strong> ${sop.reviewCadence}</span>
+      <span><strong>Report Regularity:</strong> ${sop.reportRegularity || 'On Updates'}</span>
     </div>
     <div class="sop-document-content">
       ${sop.content}

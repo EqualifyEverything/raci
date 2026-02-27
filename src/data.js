@@ -225,6 +225,12 @@ export const sops = [
 <p><strong>Success:</strong> Team operations remain strictly within the communication procedures outlined in this document.</p>
 <p><strong>Failure:</strong> Procedures are circumnavigated, leading to operational inefficiency.</p>
 <p><strong>Failure Examples:</strong> Additional meetings or communication required by parties who are neither Responsible nor Accountable for the specific area.</p>
+<h3>4) Remediation</h3>
+<ul>
+    <li>Address the system that created the bug causing the failure.</li>
+    <li>Increase consultation meeting regularity for the impacted area.</li>
+    <li>Update RACI items to ensure clarity and alignment with operational needs.</li>
+</ul>
         `
     },
     {

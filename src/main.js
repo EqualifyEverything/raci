@@ -11,9 +11,10 @@ let currentNav = 'raci';
 let currentView = 'grid';
 let currentPersonFilter = 'all';
 let currentProjectFilter = 'all';
+let currentSort = 'label';
 
 function getFilteredAreas() {
-  const filtered = currentPersonFilter === 'all'
+  let filtered = currentPersonFilter === 'all'
     ? [...areas]
     : areas.filter(area =>
       area.r.includes(currentPersonFilter) ||
@@ -23,17 +24,34 @@ function getFilteredAreas() {
     );
 
   if (currentProjectFilter !== 'all') {
-    return filtered.filter(area => area.project === currentProjectFilter)
-      .sort((a, b) => {
-        if (a.id === 'dase_team_management') return -1;
-        if (b.id === 'dase_team_management') return 1;
-        return a.label.localeCompare(b.label);
-      });
+    filtered = filtered.filter(area => area.project === currentProjectFilter);
   }
 
   return filtered.sort((a, b) => {
+    // Pinned content always first
     if (a.id === 'dase_team_management') return -1;
     if (b.id === 'dase_team_management') return 1;
+
+    if (currentSort === 'project') {
+      const projA = getProjectName(a.project);
+      const projB = getProjectName(b.project);
+      if (projA !== projB) return projA.localeCompare(projB);
+    } else if (currentSort.startsWith('effective')) {
+      const dateA = a.effectiveDate || 'TBD';
+      const dateB = b.effectiveDate || 'TBD';
+
+      // Move TBD to end regardless of direction
+      if (dateA === 'TBD' && dateB !== 'TBD') return 1;
+      if (dateA !== 'TBD' && dateB === 'TBD') return -1;
+
+      if (dateA !== dateB) {
+        return currentSort === 'effective-asc'
+          ? dateA.localeCompare(dateB)
+          : dateB.localeCompare(dateA);
+      }
+    }
+
+    // Default: Sort by label
     return a.label.localeCompare(b.label);
   });
 }
@@ -82,7 +100,10 @@ function renderGrid() {
             ${getProjectName(area.project)} ${area.label} 
             ${area.tbd ? '<span class="pending-badge">PENDING</span>' : ''}
           </h3>
-          ${area.objective ? `<p class="area-objective">${area.objective}</p>` : ''}
+          <div class="area-meta-info">
+            <span class="effective-badge">Effective: ${area.effectiveDate || 'TBD'}</span>
+            ${area.objective ? `<p class="area-objective">${area.objective}</p>` : ''}
+          </div>
         </div>
 
         <div class="card-body">
@@ -137,7 +158,7 @@ function renderTable() {
   const filteredAreas = getFilteredAreas();
 
   // Show all people in table, but maybe highlight the filtered one
-  const headers = ['Area', ...people.map(p => p.name)];
+  const headers = ['Area', 'Effective', ...people.map(p => p.name)];
 
   const rows = filteredAreas.map(area => {
     const cells = people.map(person => {
@@ -185,6 +206,7 @@ function renderTable() {
             </div>
           </div>
         </th>
+        <td><span class="table-effective-date">${area.effectiveDate || 'TBD'}</span></td>
         ${cells.join('')}
       </tr>
     `;
@@ -453,6 +475,7 @@ function updateUrl(openSopId = null) {
   if (currentView !== 'grid') urlParams.set('view', currentView);
   if (currentProjectFilter !== 'all') urlParams.set('project', currentProjectFilter);
   if (currentPersonFilter !== 'all') urlParams.set('person', currentPersonFilter);
+  if (currentSort !== 'label') urlParams.set('sort', currentSort);
 
   // If the modal is explicitly passed, or if it is currently open
   const modal = document.getElementById('sop-modal');
@@ -532,6 +555,18 @@ function handleUrlParams() {
     currentPersonFilter = 'all';
     personFilter.value = 'all';
   }
+
+  // Parse Sort
+  const sortParam = urlParams.get('sort');
+  if (sortParam && ['label', 'project', 'effective-asc', 'effective-desc'].includes(sortParam)) {
+    currentSort = sortParam;
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) sortSelect.value = sortParam;
+  } else {
+    currentSort = 'label';
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) sortSelect.value = 'label';
+  }
 }
 
 // Handle Browser Back/Forward
@@ -572,6 +607,16 @@ function init() {
   populateProjectFilter();
 
   handleUrlParams();
+
+  const sortSelect = document.getElementById('sort-select');
+  if (sortSelect) {
+    sortSelect.value = currentSort;
+    sortSelect.addEventListener('change', (e) => {
+      currentSort = e.target.value;
+      render();
+      updateUrl();
+    });
+  }
 
   render();
   renderLegend();

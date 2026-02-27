@@ -52,7 +52,7 @@
         </div>
 
         <div class="filter-group">
-          <label for="project-filter">Filter by Project:</label>
+          <label for="project-filter">Project:</label>
           <select id="project-filter">
             <option value="all">All Projects</option>
             <!-- Options populated by JS -->
@@ -60,10 +60,20 @@
         </div>
 
         <div class="filter-group">
-          <label for="person-filter">Filter by Person:</label>
+          <label for="person-filter">Person:</label>
           <select id="person-filter">
             <option value="all">Everyone</option>
             <!-- Options populated by JS -->
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="sort-select">Sort:</label>
+          <select id="sort-select">
+            <option value="label">Area Name</option>
+            <option value="project">Project Name</option>
+            <option value="effective-desc">Date (Newer to Older)</option>
+            <option value="effective-asc">Date (Older to Newer)</option>
           </select>
         </div>
 

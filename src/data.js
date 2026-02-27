@@ -32,6 +32,7 @@ export const areas = [
         objective: 'Overarchingly manage the areas in this RACI chart.',
         meetingRegularity: 'Monthly (1st Mondays)',
         informedRegularity: 'On updates',
+        effectiveDate: '2026-02-27?',
         r: ['blake'],
         a: ['gemma'],
         c: ['trey', 'chris', 'stefin'],
@@ -44,6 +45,7 @@ export const areas = [
         objective: 'Provide timely and effective assistance to Equalify users and maintain high satisfaction through comprehensive support services.',
         meetingRegularity: 'Monthly (1st Fridays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['new_support_hire'],
         a: ['amanda'],
         c: ['chris', 'ck', 'trey', 'dylan', 'blake'],
@@ -56,6 +58,7 @@ export const areas = [
         objective: 'Develop, maintain, and innovate the core Equalify Hub platform to serve as the central accessibility management system.',
         meetingRegularity: 'Monthly (2nd Tuesdays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['chris'],
         a: ['blake'],
         c: ['trey', 'amanda', 'ck', 'new_support_hire'],
@@ -68,6 +71,7 @@ export const areas = [
         objective: 'Direct the architecture, development, and cross-project integration of the Reflow design system for UI consistency.',
         meetingRegularity: 'Monthly (3rd Wednesdays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['dylan'],
         a: ['blake'],
         c: ['gemma'],
@@ -80,6 +84,7 @@ export const areas = [
         objective: 'Design and implement interactive, data-driven dashboards for visualizing complex accessibility metrics and trends.',
         meetingRegularity: 'Monthly (1st Thursdays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['trey'],
         a: ['blake'],
         c: ['chris'],
@@ -92,6 +97,7 @@ export const areas = [
         objective: 'Maintain and update the Equalify Dashboard WordPress Plugin.',
         meetingRegularity: 'Monthly (1st Thursdays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['trey'],
         a: ['blake'],
         c: ['chris'],
@@ -104,6 +110,7 @@ export const areas = [
         objective: 'Enforce and validate rigorous accessibility standards across all Equalify products to ensure an inclusive user experience.',
         meetingRegularity: 'Monthly (1st Tuesdays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['ck'],
         a: ['chris'],
         c: ['brother_j', 'trey'],
@@ -116,6 +123,7 @@ export const areas = [
         objective: 'Manage the full lifecycle of software releases, ensuring stability, performance, and seamless deployment of new features.',
         meetingRegularity: 'Monthly (3rd Thursdays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['amanda'],
         a: ['trey'],
         c: ['blake', 'chris', 'ck', 'new_support_hire'],
@@ -128,6 +136,7 @@ export const areas = [
         objective: 'Develop and maintain specialized tools for gathering and analyzing direct user feedback on accessibility barriers.',
         meetingRegularity: 'Monthly (2nd Fridays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['ck'],
         a: ['chris'],
         c: ['brother_j', 'trey'],
@@ -140,6 +149,7 @@ export const areas = [
         objective: 'Streamline administrative workflows, internal communications, and operational efficiency for the Open Source Fund.',
         meetingRegularity: 'Monthly (3rd Tuesday)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['michelle'],
         a: ['blake'],
         c: ['stefin'],
@@ -152,6 +162,7 @@ export const areas = [
         objective: 'Oversee strategic governance, stakeholder relations, and high-level fundraising initiatives for the fund.',
         meetingRegularity: 'Monthly (2nd Wednesdays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['blake'],
         a: ['jason'],
         c: ['stefin', 'gemma'],
@@ -164,6 +175,7 @@ export const areas = [
         objective: 'Execute targeted recruitment, streamline the enrollment process, and provide comprehensive support to students throughout the AI Leaders program.',
         meetingRegularity: 'Monthly (1st Wednesdays)',
         informedRegularity: 'On updates',
+        effectiveDate: 'TBD',
         r: ['asya'],
         a: ['stefin'],
         c: ['blake'],
@@ -176,6 +188,7 @@ export const areas = [
         objective: 'Provide strategic direction and administrative oversight for the AI Leaders program and its constituent representation.',
         meetingRegularity: 'Monthly (2nd Thursdays)',
         informedRegularity: 'On updates',
+        effectiveDate: '2026-02-27',
         r: ['stefin'],
         a: ['blake'],
         c: ['gemma', 'asya'],
@@ -188,6 +201,7 @@ export const areas = [
         objective: 'Execute the initial platform buildout and support until May 14, followed by a transition to a newly established engineering team.',
         meetingRegularity: 'Weekly (Tuesdays)',
         informedRegularity: 'On updates',
+        effectiveDate: '2026-02-27',
         r: ['blake'],
         a: ['stefin'],
         c: ['asya'],
@@ -226,7 +240,7 @@ export const sops = [
         area: 'dase_team_management',
         responsible: 'blake',
         accountable: 'gemma',
-        effectiveDate: '2026-02-27',
+        effectiveDate: '2026-02-27?',
         reviewCadence: 'Monthly (1st Mondays)',
         reportRegularity: 'On Updates',
         content: `
@@ -269,28 +283,14 @@ graph TD
     Success --> Start
     Remediation3 --> Start
 </pre>
-        `
-    },
-    {
-        id: 'sop_ospo_transition',
-        title: 'Transition to Open Source Program Office',
-        project: 'open_source_fund',
-        area: 'board_creation',
-        responsible: 'michelle',
-        accountable: 'blake',
-        effectiveDate: '2026-02-27',
-        reviewCadence: 'Quarterly',
-        reportRegularity: 'On Updates',
-        content: `
-<h3>1) Overview</h3>
-<p>This SOP outlines the procedure for transitioning the Open Source Fund's current operations into a formal Open Source Program Office (OSPO).</p>
-<h3>2) Key Phases</h3>
-<ul>
-    <li><strong>Assessment:</strong> Evaluate current open source activities, policies, and resources.</li>
-    <li><strong>Planning:</strong> Define the OSPO's mission, structure, and operational framework.</li>
-    <li><strong>Implementation:</strong> Establish tools, workflows, and training programs.</li>
-    <li><strong>Review:</strong> Continuously monitor and iterate on the OSPO's performance.</li>
-</ul>
+<h3>6) RACI Update Process</h3>
+<p>In the case of a new area implementation or a required RACI update, the following process is followed:</p>
+<ol>
+    <li><strong>Call a meeting</strong> with those who may be affected by the RACI update and anyone who raised concerns leading to the update.</li>
+    <li><strong>Agree on updates</strong> collaboratively during the meeting.</li>
+    <li><strong>Note the effective date</strong> on the updated RACI item.</li>
+    <li><strong>Proceed</strong> with team operations under the new assignments.</li>
+</ol>
         `
     }
 ];

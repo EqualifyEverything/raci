@@ -116,7 +116,8 @@ h1 {
 }
 
 #person-filter,
-#project-filter {
+#project-filter,
+#sort-select {
   background: var(--bg);
   color: var(--text);
   border: 1px solid var(--card-border);
@@ -134,7 +135,8 @@ h1 {
 }
 
 #person-filter:focus,
-#project-filter:focus {
+#project-filter:focus,
+#sort-select:focus {
   outline: 2px solid var(--primary);
   outline-offset: 1px;
   border-color: var(--primary);
@@ -866,4 +868,29 @@ th.header-highlight {
   border: 1px solid var(--card-border);
   margin: 1.5rem 0;
   overflow-x: auto;
+}
+
+.effective-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--uic-red);
+  background: rgba(213, 0, 50, 0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.table-effective-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.area-meta-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }

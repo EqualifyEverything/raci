@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Equalify Accessibility Engineering Team Roles & Responsibilities</title>
+  <title>UIC Accessibility Engineering Team Roles & Responsibilities</title>
   <meta name="description"
-    content="Explore the Equalify Accessibility Engineering Team roles and responsibilities through an interactive RACI chart." />
+    content="Explore the UIC Accessibility Engineering Team roles and responsibilities through an interactive RACI chart." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -18,12 +18,27 @@
     <header class="header">
       <div class="container">
         <div class="logo">
-          <img src="https://equalify.app/wp-content/uploads/2024/04/Equalify-Logo.png" alt="Equalify"
-            class="logo-img" />
+          <svg xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 0 250 249.97997" width="80">
+            <g transform="matrix(1.25 0 0 -1.25 -1089.3 622.78)">
+              <g>
+                <path
+                  d="m1070.6 398.15c0 54.778-44.414 99.192-99.2 99.192s-99.2-44.406-99.2-99.192 44.414-99.192 99.2-99.192 99.2 44.406 99.2 99.192"
+                  fill="#d50032" />
+                <path
+                  d="m192.28 86.984c-25.22 0-40.68 17.016-40.68 41.846 0 24.74 14.63 41.88 40.2 41.88 18.43 0 29.97-8.92 35.68-21.9l-22-7.83c-2.26 6.3-6.42 10.1-13.56 10.1-10.35 0-15.59-8.33-15.59-22.25 0-14.01 5.24-22.58 15.59-22.58 7.61 0 12.01 4.64 14.04 12.48l21.04-10.11c-4.05-10.586-15.46-21.636-34.72-21.636zm-164.48 1.422v47.814c0 11.3 1.192 16.76 4.408 22.24 5.35 8.92 19.617 12.37 32.111 12.37 12.485 0 26.763-3.45 32.114-12.37 3.206-5.48 4.402-10.94 4.402-22.24v-47.814h-24.271v48.284c0 5.47-0.711 9.05-2.735 11.42-1.903 2.26-4.991 3.33-9.51 3.33-4.528 0-7.613-1.07-9.517-3.33-2.014-2.37-2.735-5.95-2.735-11.42v-48.284h-24.267zm87.765 0v80.874h24.27v-80.874h-24.27z"
+                  transform="matrix(.8 0 0 -.8 871.47 498.22)" fill="#fff" />
+              </g>
+            </g>
+          </svg>
+          <span class="logo-text">Accessibility Engineering Team</span>
         </div>
         <h1>Roles & Responsibilities</h1>
         <p class="subtitle">January 20 - June 20, 2026</p>
       </div>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <button class="nav-btn active" data-nav="raci" id="nav-raci">RACI Chart</button>
+        <button class="nav-btn" data-nav="sops" id="nav-sops">Standard Operating Procedures (SOPs)</button>
+      </nav>
     </header>
 
     <main class="container">
@@ -33,6 +48,14 @@
             id="tab-grid">Grid View</button>
           <button class="tab-btn" data-view="table" role="tab" aria-selected="false" aria-controls="raci-container"
             id="tab-table">Table View</button>
+        </div>
+
+        <div class="filter-group">
+          <label for="project-filter">Filter by Project:</label>
+          <select id="project-filter">
+            <option value="all">All Projects</option>
+            <!-- Options populated by JS -->
+          </select>
         </div>
 
         <div class="filter-group">
@@ -62,6 +85,26 @@
 
 
   </div>
+  </div>
+
+  <dialog id="sop-modal" class="sop-modal" aria-labelledby="sop-modal-title">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="sop-modal-title">SOP Title</h2>
+        <button id="close-modal" class="close-btn" aria-label="Close SOP">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </header>
+      <div id="sop-modal-body" class="modal-body">
+        <!-- SOP Content Injected Here -->
+      </div>
+    </div>
+  </dialog>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 

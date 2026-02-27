@@ -3,6 +3,7 @@ export const people = [
     { id: 'gemma', name: 'Jemma' },
     { id: 'stefin', name: 'Stefin' },
     { id: 'trey', name: 'Trey' },
+    { id: 'new_support_hire', name: 'New Support Hire' },
     { id: 'amanda', name: 'Amanda' },
     { id: 'helen', name: 'Helen' },
     { id: 'chris', name: 'Chris' },
@@ -11,104 +12,174 @@ export const people = [
     { id: 'michelle', name: 'Michelle' },
     { id: 'michael', name: 'Michael' },
     { id: 'lucy', name: 'Lucy' },
+    { id: 'asya', name: 'Asya' },
+    { id: 'jason', name: 'Jason' },
+    { id: 'dylan', name: 'Dylan' }
+];
+
+export const projects = [
+    { id: 'dase', name: 'DASE' },
+    { id: 'equalify', name: 'Equalify' },
+    { id: 'ai_leaders', name: 'AI Leaders' },
+    { id: 'open_source_fund', name: 'Open Source Fund' }
 ];
 
 export const areas = [
     {
-        id: 'fundraising',
-        label: 'Fundraising',
+        id: 'dase_team_management',
+        label: 'Team Management',
+        project: 'dase',
+        objective: 'Overarchingly manage the areas in this RACI chart.',
+        meetingRegularity: 'Regular contact',
+        informedRegularity: 'On updates',
         r: ['blake'],
         a: ['gemma'],
-        c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
+        c: ['trey', 'chris', 'stefin'],
+        i: ['new_support_hire', 'amanda', 'helen', 'brother_j', 'ck', 'michelle', 'michael', 'lucy', 'asya', 'dylan']
     },
     {
         id: 'support',
         label: 'Support',
-        r: ['helen'],
-        a: ['gemma'],
-        c: ['michael', 'blake'],
-        i: ['chris', 'stefin', 'brother_j', 'ck', 'michelle', 'lucy', 'trey', 'amanda']
+        project: 'equalify',
+        objective: 'Provide timely and effective assistance to Equalify users and maintain high satisfaction through comprehensive support services.',
+        meetingRegularity: 'Monthly (1st Fridays)',
+        informedRegularity: 'On updates',
+        r: ['new_support_hire'],
+        a: ['amanda'],
+        c: ['chris', 'ck', 'trey', 'dylan', 'blake'],
+        i: ['gemma']
     },
     {
-        id: 'training',
-        label: 'Training',
-        r: ['amanda'],
-        a: ['blake'],
-        c: ['trey', 'gemma', 'helen'],
-        i: ['chris', 'brother_j', 'ck', 'stefin', 'michelle', 'michael', 'lucy']
-    },
-    {
-        id: 'feature_buildout',
-        label: 'Feature Buildout',
+        id: 'hub_development',
+        label: 'Hub',
+        project: 'equalify',
+        objective: 'Develop, maintain, and innovate the core Equalify Hub platform to serve as the central accessibility management system.',
+        meetingRegularity: 'Monthly (2nd Tuesdays)',
+        informedRegularity: 'On updates',
         r: ['chris'],
-        a: ['trey'],
-        c: ['blake', 'stefin', 'gemma', 'ck', 'amanda'],
-        i: ['helen', 'brother_j', 'michelle', 'michael', 'lucy']
-    },
-    {
-        id: 'fixes',
-        label: 'Fixes',
-        r: ['chris'],
-        a: ['trey'],
-        c: ['blake', 'michael', 'ck', 'amanda', 'helen'],
-        i: ['gemma', 'stefin', 'brother_j', 'michelle', 'lucy']
-    },
-    {
-        id: 'project_management',
-        label: 'Project Delivery',
-        r: ['stefin'],
         a: ['blake'],
-        c: ['gemma', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
+        c: ['trey', 'amanda', 'ck', 'new_support_hire'],
+        i: ['gemma']
+    },
+    {
+        id: 'reflow_development',
+        label: 'Reflow',
+        project: 'equalify',
+        objective: 'Direct the architecture, development, and cross-project integration of the Reflow design system for UI consistency.',
+        meetingRegularity: 'Monthly (3rd Wednesdays)',
+        informedRegularity: 'On updates',
+        r: ['dylan'],
+        a: ['blake'],
+        c: ['gemma'],
+        i: ['chris', 'trey', 'ck', 'amanda', 'new_support_hire']
+    },
+    {
+        id: 'dashboard_development',
+        label: 'Dashboard Development',
+        project: 'equalify',
+        objective: 'Design and implement interactive, data-driven dashboards for visualizing complex accessibility metrics and trends.',
+        meetingRegularity: 'Monthly (1st Thursdays)',
+        informedRegularity: 'On updates',
+        r: ['trey'],
+        a: ['blake'],
+        c: ['chris'],
+        i: ['ck', 'new_support_hire', 'gemma', 'amanda']
+    },
+    {
+        id: 'equalify_wp_plugin',
+        label: 'Dashboard WP Plugin',
+        project: 'equalify',
+        objective: 'Maintain and update the Equalify Dashboard WordPress Plugin.',
+        meetingRegularity: 'Monthly (1st Thursdays)',
+        informedRegularity: 'On updates',
+        r: ['trey'],
+        a: ['blake'],
+        c: ['chris'],
+        i: ['ck', 'new_support_hire', 'gemma', 'amanda']
     },
     {
         id: 'accessibility',
         label: 'Accessibility',
+        project: 'equalify',
+        objective: 'Enforce and validate rigorous accessibility standards across all Equalify products to ensure an inclusive user experience.',
+        meetingRegularity: 'Monthly (1st Tuesdays)',
+        informedRegularity: 'On updates',
         r: ['ck'],
-        a: ['blake'],
-        c: ['helen', 'brother_j', 'trey', 'lucy'],
-        i: ['chris', 'gemma', 'stefin', 'amanda', 'michelle', 'michael']
+        a: ['chris'],
+        c: ['brother_j', 'trey'],
+        i: ['blake', 'gemma']
     },
     {
-        id: 'budget',
-        label: 'Budget',
-        r: ['blake'],
-        a: ['gemma'],
-        c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
-    },
-    {
-        id: 'release',
+        id: 'equalify_release',
         label: 'Release',
+        project: 'equalify',
+        objective: 'Manage the full lifecycle of software releases, ensuring stability, performance, and seamless deployment of new features.',
+        meetingRegularity: 'Monthly (3rd Thursdays)',
+        informedRegularity: 'On updates',
         r: ['amanda'],
-        a: ['blake'],
-        c: ['gemma', 'trey', 'helen', 'stefin'],
-        i: ['chris', 'brother_j', 'ck', 'michelle', 'michael', 'lucy']
+        a: ['trey'],
+        c: ['blake', 'chris', 'ck', 'new_support_hire'],
+        i: ['gemma']
     },
     {
-        id: 'community',
-        label: 'Community',
-        r: ['stefin'],
-        a: ['blake'],
-        c: ['gemma', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
-    },
-    {
-        id: 'milestones',
-        label: 'Milestones',
-        r: ['blake'],
-        a: ['gemma'],
-        c: ['stefin', 'trey', 'amanda'],
-        i: ['chris', 'brother_j', 'ck', 'helen', 'michelle', 'michael', 'lucy']
+        id: 'user_testing_extension',
+        label: 'User Testing Extension',
+        project: 'equalify',
+        objective: 'Develop and maintain specialized tools for gathering and analyzing direct user feedback on accessibility barriers.',
+        meetingRegularity: 'Monthly (2nd Fridays)',
+        informedRegularity: 'On updates',
+        r: ['ck'],
+        a: ['chris'],
+        c: ['brother_j', 'trey'],
+        i: ['blake', 'gemma', 'amanda', 'new_support_hire']
     },
     {
         id: 'operations',
         label: 'Operations',
+        project: 'open_source_fund',
+        objective: 'Streamline administrative workflows, internal communications, and operational efficiency for the Open Source Fund.',
+        meetingRegularity: 'Monthly (3rd Tuesday)',
+        informedRegularity: 'On updates',
         r: ['michelle'],
         a: ['blake'],
-        c: ['stefin', 'gemma', 'helen'],
-        i: ['trey', 'amanda', 'chris', 'brother_j', 'ck', 'michael', 'lucy']
+        c: ['stefin'],
+        i: ['gemma']
+    },
+    {
+        id: 'board_creation',
+        label: 'Management',
+        project: 'open_source_fund',
+        objective: 'Oversee strategic governance, stakeholder relations, and high-level fundraising initiatives for the fund.',
+        meetingRegularity: 'Monthly (2nd Wednesdays)',
+        informedRegularity: 'On updates',
+        r: ['blake'],
+        a: ['jason'],
+        c: ['stefin', 'gemma'],
+        i: ['michelle']
+    },
+    {
+        id: 'admissions',
+        label: 'Student Services',
+        project: 'ai_leaders',
+        objective: 'Execute targeted recruitment, streamline the enrollment process, and provide comprehensive support to students throughout the AI Leaders program.',
+        meetingRegularity: 'Monthly (1st Wednesdays)',
+        informedRegularity: 'On updates',
+        r: ['asya'],
+        a: ['stefin'],
+        c: ['blake'],
+        i: ['gemma', 'jason']
+    },
+    {
+        id: 'ail_management',
+        label: 'Management',
+        project: 'ai_leaders',
+        objective: 'Provide strategic direction and administrative oversight for the AI Leaders program and its constituent representation.',
+        meetingRegularity: 'Monthly (2nd Thursdays)',
+        informedRegularity: 'On updates',
+        r: ['stefin'],
+        a: ['blake'],
+        c: ['gemma'],
+        i: ['jason']
     }
 ];
 
@@ -116,7 +187,7 @@ export const roleDefinitions = {
     R: {
         title: 'Responsible',
         description: 'The person who performs the work or completes the task.',
-        color: '#10b981'
+        color: '#d50032'
     },
     A: {
         title: 'Accountable',
@@ -134,3 +205,47 @@ export const roleDefinitions = {
         color: '#6b7280'
     }
 };
+
+export const sops = [
+    {
+        id: 'sop_dase_management',
+        title: 'DASE Procedure and Management',
+        project: 'dase',
+        area: 'dase_team_management',
+        responsible: 'blake',
+        accountable: 'gemma',
+        effectiveDate: '2026-02-27',
+        reviewCadence: 'Ongoing',
+        content: `
+<h3>1) Overview</h3>
+<p>This SOP overarchingly details how to manage the areas in this RACI chart. Each responsible party can create an SOP with those accountable for their RACI area. SOPs are agreements laying out clear objectives and communication strategies that the Responsible and Accountable parties agree to.</p>
+<h3>2) Communication Procedures</h3>
+<p>Those Responsible and Accountable will assumed to be in regular contact on the development of the area. The Responsible person should be prepared to present updates and get feedback from those accountable, and the presentation should be supported by those accountable.</p>
+<h3>3) Success and Failure Verification</h3>
+<p><strong>Success:</strong> Team operations remain strictly within the communication procedures outlined in this document.</p>
+<p><strong>Failure:</strong> Procedures are circumnavigated, leading to operational inefficiency.</p>
+<p><strong>Failure Examples:</strong> Additional meetings or communication required by parties who are neither Responsible nor Accountable for the specific area.</p>
+        `
+    },
+    {
+        id: 'sop_ospo_transition',
+        title: 'Transition to Open Source Program Office',
+        project: 'open_source_fund',
+        area: 'operations',
+        responsible: 'michelle',
+        accountable: 'blake',
+        effectiveDate: '2026-02-27',
+        reviewCadence: 'Quarterly',
+        content: `
+<h3>1) Overview</h3>
+<p>This SOP outlines the procedure for transitioning the Open Source Fund's current operations into a formal Open Source Program Office (OSPO).</p>
+<h3>2) Key Phases</h3>
+<ul>
+    <li><strong>Assessment:</strong> Evaluate current open source activities, policies, and resources.</li>
+    <li><strong>Planning:</strong> Define the OSPO's mission, structure, and operational framework.</li>
+    <li><strong>Implementation:</strong> Establish tools, workflows, and training programs.</li>
+    <li><strong>Review:</strong> Continuously monitor and iterate on the OSPO's performance.</li>
+</ul>
+        `
+    }
+];

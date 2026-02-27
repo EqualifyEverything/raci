@@ -1,6 +1,6 @@
-# Equalify: Roles & Responsibilities
+# UIC: Roles & Responsibilities
 
-Welcome to the **Equalify Roles & Responsibilities** repository. This project serves as an interactive RACI (Responsible, Accountable, Consulted, and Informed) matrix, providing clear governance and ownership for the various work areas within the Equalify organization.
+Welcome to the **UIC Roles & Responsibilities** repository. This project serves as an interactive RACI (Responsible, Accountable, Consulted, and Informed) matrix, providing clear governance and ownership for the various work areas within the UIC Accessibility Engineering Team.
 
 ## 🎯 Purpose
 
@@ -54,7 +54,7 @@ Click a name below to see their specific roles and responsibilities in the inter
 
 | Team Member | Direct View |
 | :--- | :--- |
-| **Amanda** | [View Roles](https://equalifyeverything.github.io/raci/?person=amanda) |
+| **New Support Hire** | [View Roles](https://equalifyeverything.github.io/raci/?person=new_support_hire) |
 | **Blake** | [View Roles](https://equalifyeverything.github.io/raci/?person=blake) |
 | **Brother J** | [View Roles](https://equalifyeverything.github.io/raci/?person=brother_j) |
 | **Chris** | [View Roles](https://equalifyeverything.github.io/raci/?person=chris) |
@@ -105,4 +105,4 @@ To update roles or people, modify the `src/data.js` file. The UI will automatica
 ---
 
 > [!TIP]
-> **Equalify** is dedicated to making the web accessible to everyone. Every role defined here supports that mission.
+> **UIC** is dedicated to making the web accessible to everyone. Every role defined here supports that mission.

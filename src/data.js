@@ -188,10 +188,10 @@ export const areas = [
         objective: 'Direct the initial buildout, support, and transition of the AI Leaders platform to another engineering team on May 14.',
         meetingRegularity: 'Weekly (Tuesdays)',
         informedRegularity: 'On updates',
-        r: ['chris'],
-        a: ['blake'],
-        c: ['stefin', 'gemma'],
-        i: ['jason']
+        r: ['blake'],
+        a: ['stefin'],
+        c: ['asya'],
+        i: ['jason', 'gemma']
     }
 ];
 

@@ -30,7 +30,7 @@ export const areas = [
         label: 'Team Management',
         project: 'dase',
         objective: 'Overarchingly manage the areas in this RACI chart.',
-        meetingRegularity: 'Regular contact',
+        meetingRegularity: 'Monthly (1st Mondays)',
         informedRegularity: 'On updates',
         r: ['blake'],
         a: ['gemma'],
@@ -216,14 +216,16 @@ export const sops = [
         accountable: 'gemma',
         effectiveDate: '2026-02-27',
         reviewCadence: 'Ongoing',
+        reportRegularity: 'On Updates',
         content: `
 <h3>1) Overview</h3>
 <p>This SOP overarchingly details how to manage the areas in this RACI chart. <mark><strong>The SOP's primary focus is to minimize micromanagement to maximize the performance of team projects.</strong></mark> Each responsible party can create an SOP with those accountable for their RACI area. SOPs are agreements laying out clear objectives and communication strategies that the Responsible and Accountable parties agree to.</p>
 <h3>2) Communication Procedures</h3>
 <ol>
-    <li>Maintain regular contact between the Responsible and Accountable parties on the development of the area.</li>
-    <li>Prepare the Responsible person to present updates and receive feedback from those accountable.</li>
-    <li>Ensure the presentation is supported by those accountable.</li>
+    <li>Responsible and Accountable parties <strong>collaborate continuously</strong> on the development of the area.</li>
+    <li>Those accountable <strong>support</strong> the presentation and <strong>validate</strong> area progress.</li>
+    <li>The Responsible person <strong>presents</strong> updates and <strong>solicits</strong> feedback from those who need to be consulted during the regular update meeting.</li>
+    <li>Those informed <strong>receive update reports</strong> from the responsible person within the agreed regularity, stipulated in the SOP.</li>
 </ol>
 <h3>3) Success and Failure Verification</h3>
 <p><strong>Success:</strong> Team operations remain strictly within the communication procedures outlined in this document.</p>
@@ -239,10 +241,11 @@ export const sops = [
 <h3>5) Procedure Flow Diagram</h3>
 <pre class="mermaid">
 graph TD
-    Start((Operational Start)) --> Process[Maintain Regular Contact<br/>R & A Parties]
-    Process --> Prep[Responsible Prepares Update<br/>& Solicits Feedback]
-    Prep --> Presentation[Presentation Supported by<br/>Accountable Party]
-    Presentation --> SuccessCheck{Procedures Followed?}
+    Start((Operational Start)) --> Process[Continuous Collaboration<br/>R & A Parties]
+    Process --> Prep[Accountable Support &<br/>Validate Progress]
+    Prep --> Presentation[Responsible Presents & Solicits<br/>Consulted Feedback at Meeting]
+    Presentation --> Informed[Informed Receive Regular Update Reports]
+    Informed --> SuccessCheck{Procedures Followed?}
     
     SuccessCheck -- Yes --> Success([Success: Efficient Operations])
     SuccessCheck -- No --> Failure([Failure: Procedures Circumnavigated])
@@ -265,6 +268,7 @@ graph TD
         accountable: 'blake',
         effectiveDate: '2026-02-27',
         reviewCadence: 'Quarterly',
+        reportRegularity: 'On Updates',
         content: `
 <h3>1) Overview</h3>
 <p>This SOP outlines the procedure for transitioning the Open Source Fund's current operations into a formal Open Source Program Office (OSPO).</p>

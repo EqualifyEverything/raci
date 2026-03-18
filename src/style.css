@@ -894,3 +894,19 @@ th.header-highlight {
   flex-direction: column;
   gap: 0.25rem;
 }
+
+/* Accessibility Focus Management */
+:focus-visible {
+  outline: 3px solid var(--uic-red);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.sop-modal:focus-visible {
+  outline: none; /* Dialog itself shouldn't have a giant outline when opened */
+}
+
+#sop-modal-title:focus-visible {
+  outline: 2px dashed var(--uic-red);
+  outline-offset: 4px;
+}

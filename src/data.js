@@ -11,7 +11,8 @@ export const people = [
     { id: 'michelle', name: 'Michelle' },
     { id: 'asya', name: 'Asya' },
     { id: 'jason', name: 'Jason' },
-    { id: 'dylan', name: 'Dylan' }
+    { id: 'dylan', name: 'Dylan' },
+    { id: 'lucy', name: 'Lucy' }
 ];
 
 export const projects = [
@@ -27,7 +28,7 @@ export const areas = [
         label: 'Team Management',
         project: 'dae',
         objective: 'Overarchingly manage the areas in this RACI chart.',
-        meetingRegularity: 'Monthly (1st Mondays)',
+        meetingRegularity: 'Monthly (1st Mon)',
         informedRegularity: 'On updates',
         effectiveDate: '2026-02-27?',
         r: ['blake'],
@@ -40,7 +41,7 @@ export const areas = [
         label: 'Support',
         project: 'equalify',
         objective: 'Provide timely and effective assistance to Equalify users and maintain high satisfaction through comprehensive support services.',
-        meetingRegularity: 'Monthly (1st Fridays)',
+        meetingRegularity: 'Monthly (1st Fri)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['new_support_hire'],
@@ -53,7 +54,7 @@ export const areas = [
         label: 'Hub',
         project: 'equalify',
         objective: 'Develop, maintain, and innovate the core Equalify Hub platform to serve as the central accessibility management system.',
-        meetingRegularity: 'Monthly (2nd Tuesdays)',
+        meetingRegularity: 'Monthly (2nd Tue)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['chris'],
@@ -66,7 +67,7 @@ export const areas = [
         label: 'Reflow',
         project: 'equalify',
         objective: 'Direct the architecture, development, and cross-project integration of the Reflow design system for UI consistency.',
-        meetingRegularity: 'Monthly (3rd Wednesdays)',
+        meetingRegularity: 'Monthly (3rd Wed)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['dylan'],
@@ -79,7 +80,7 @@ export const areas = [
         label: 'Dashboard Development',
         project: 'equalify',
         objective: 'Design and implement interactive, data-driven dashboards for visualizing complex accessibility metrics and trends.',
-        meetingRegularity: 'Monthly (1st Thursdays)',
+        meetingRegularity: 'Monthly (1st Thu)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['trey'],
@@ -92,7 +93,7 @@ export const areas = [
         label: 'Dashboard WP Plugin',
         project: 'equalify',
         objective: 'Maintain and update the Equalify Dashboard WordPress Plugin.',
-        meetingRegularity: 'Monthly (1st Thursdays)',
+        meetingRegularity: 'Monthly (1st Thu)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['trey'],
@@ -105,7 +106,7 @@ export const areas = [
         label: 'Accessibility',
         project: 'equalify',
         objective: 'Enforce and validate rigorous accessibility standards across all Equalify products to ensure an inclusive user experience.',
-        meetingRegularity: 'Monthly (1st Tuesdays)',
+        meetingRegularity: 'Monthly (1st Tue)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['ck'],
@@ -118,7 +119,7 @@ export const areas = [
         label: 'Release',
         project: 'equalify',
         objective: 'Manage the full lifecycle of software releases, ensuring stability, performance, and seamless deployment of new features.',
-        meetingRegularity: 'Monthly (3rd Thursdays)',
+        meetingRegularity: 'Monthly (3rd Thu)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['amanda'],
@@ -131,20 +132,22 @@ export const areas = [
         label: 'User Testing Extension',
         project: 'equalify',
         objective: 'Develop and maintain specialized tools for gathering and analyzing direct user feedback on accessibility barriers.',
-        meetingRegularity: 'Monthly (2nd Fridays)',
-        informedRegularity: 'On updates',
+        responsibleRegularity: 'Weekly (Tue and Thu)',
+        accountableRegularity: 'Weekly (Mon and Fri)',
+        meetingRegularity: 'Monthly (3rd Wed)',
+        informedRegularity: 'Monthly (2nd Mon)',
         effectiveDate: 'TBD',
-        r: ['ck'],
+        r: ['ck', 'brother_j'],
         a: ['chris'],
-        c: ['brother_j', 'trey'],
-        i: ['blake', 'gemma', 'amanda', 'new_support_hire']
+        c: ['blake'],
+        i: ['trey', 'gemma', 'amanda', 'new_support_hire', 'lucy']
     },
     {
         id: 'operations',
         label: 'Operations',
         project: 'open_source_fund',
         objective: 'Streamline administrative workflows, internal communications, and operational efficiency for the Open Source Fund.',
-        meetingRegularity: 'Monthly (3rd Tuesday)',
+        meetingRegularity: 'Monthly (3rd Tue)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['michelle'],
@@ -157,7 +160,7 @@ export const areas = [
         label: 'Management',
         project: 'open_source_fund',
         objective: 'Oversee strategic governance, stakeholder relations, and high-level fundraising initiatives for the fund.',
-        meetingRegularity: 'Monthly (2nd Wednesdays)',
+        meetingRegularity: 'Monthly (2nd Wed)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['blake'],
@@ -170,7 +173,7 @@ export const areas = [
         label: 'Student Services',
         project: 'ai_leaders',
         objective: 'Execute targeted recruitment, streamline the enrollment process, and provide comprehensive support to students throughout the AI Leaders program.',
-        meetingRegularity: 'Monthly (1st Wednesdays)',
+        meetingRegularity: 'Monthly (1st Wed)',
         informedRegularity: 'On updates',
         effectiveDate: 'TBD',
         r: ['asya'],
@@ -183,7 +186,7 @@ export const areas = [
         label: 'Management',
         project: 'ai_leaders',
         objective: 'Provide strategic direction and administrative oversight for the AI Leaders program and its constituent representation.',
-        meetingRegularity: 'Monthly (2nd Thursdays)',
+        meetingRegularity: 'Monthly (2nd Thu)',
         informedRegularity: 'On updates',
         effectiveDate: '2026-02-27',
         r: ['stefin'],
@@ -196,7 +199,7 @@ export const areas = [
         label: 'Platform Buildout',
         project: 'ai_leaders',
         objective: 'Execute the initial platform buildout and support until May 14, followed by a transition to a newly established engineering team.',
-        meetingRegularity: 'Weekly (Tuesdays)',
+        meetingRegularity: 'Weekly (Tue)',
         informedRegularity: 'On updates',
         effectiveDate: '2026-02-27',
         r: ['blake'],
@@ -238,7 +241,7 @@ export const sops = [
         responsible: 'blake',
         accountable: 'gemma',
         effectiveDate: '2026-02-27?',
-        reviewCadence: 'Monthly (1st Mondays)',
+        reviewCadence: 'Monthly (1st Mon)',
         reportRegularity: 'On Updates',
         content: `
 <h3>1) Overview</h3>
@@ -288,6 +291,85 @@ graph TD
     <li><strong>Note the effective date</strong> on the updated RACI item.</li>
     <li><strong>Proceed</strong> with team operations under the new assignments.</li>
 </ol>
+        `
+    },
+    {
+        id: 'sop_user_testing_extension',
+        title: 'User Testing Extension Development',
+        project: 'equalify',
+        area: 'user_testing_extension',
+        responsible: 'ck',
+        accountable: 'chris',
+        effectiveDate: 'TBD',
+        reviewCadence: 'Weekly (Tue and Thu)',
+        reportRegularity: 'Monthly (2nd Mon)',
+        content: `
+<h3>1. Purpose</h3>
+<p>This document outlines the standard operating procedures, communication protocols, and the development timeline for the User Testing Extension. It serves to align the engineering team on feature planning, UI considerations, and implementation milestones.</p>
+<h3>2. Team Communication & Cadence</h3>
+<p>Continuous and structured communication is critical to maintaining momentum and addressing technical constraints.</p>
+<h4>2.1. Design Meetings</h4>
+<ul>
+    <li><strong>Frequency:</strong> Weekly (Tue and Thu)</li>
+    <li><strong>Participants:</strong> CK, Brother J, Lucy (optional)</li>
+    <li><strong>Objective:</strong> Plan upcoming features, refine user flows, and discuss User Interface (UI) considerations.</li>
+</ul>
+<h4>2.2. Development Meetings</h4>
+<ul>
+    <li><strong>Frequency:</strong> Weekly (Mon and Fri)</li>
+    <li><strong>Participants:</strong> CK, Brother J, CA, Lucy (optional)</li>
+    <li><strong>Objective:</strong> Discuss feature implementation, troubleshoot technical constraints, and forecast further development phases.</li>
+</ul>
+<h4>2.3. Consulted Monthly Reviews</h4>
+<ul>
+    <li><strong>Frequency:</strong> Monthly (3rd Wed)</li>
+    <li><strong>Participants:</strong> Blake, CK, Brother J</li>
+    <li><strong>Objective:</strong> Provide updates to Consulted members to gather insight, clear roadblocks, and validate features against overarching accessibility goals.</li>
+</ul>
+<h4>2.4. Informed Project Updates</h4>
+<ul>
+    <li><strong>Frequency:</strong> Monthly (2nd Mon)</li>
+    <li><strong>Participants:</strong> DASE Team</li>
+    <li><strong>Objective:</strong> Notify Informed stakeholders of overall project trajectory and key developments during the scheduled DASE monthly meeting.</li>
+</ul>
+<h4>2.5. Asynchronous Communication</h4>
+<ul>
+    <li>Responsible and Accountable Team members are expected to maintain ongoing asynchronous communication throughout the week to unblock team members, share progress, and ask questions outside of scheduled meetings.</li>
+</ul>
+<h3>3. Development Roadmap & Milestones</h3>
+<h4>Phase 1: Foundational Prototype (Target: Late March)</h4>
+<p>The initial release focuses on establishing core functionality, basic user flow, and fundamental tracking capabilities.</p>
+<ul>
+    <li><strong>Onboarding & UI:</strong> Implement initial setup/first-run screens and the default start screen.</li>
+    <li><strong>Configuration:</strong> Develop functionality to set Assistive Technology (AT) and user agent configurations (via auto-detection or manual declaration).</li>
+    <li><strong>Core Features:</strong>
+        <ul>
+            <li>Implement issue filing functionality.</li>
+            <li>Establish focus tracking capabilities.</li>
+            <li>Develop a system to check for existing audits based on the current URL.</li>
+            <li>Map and establish functions triggered by user-assignable keyboard commands.</li>
+        </ul>
+    </li>
+    <li><strong>Equalify Integration:</strong> Implement data reporting so that user testing information successfully syncs and displays directly on the corresponding Equalify audit.</li>
+</ul>
+<h4>Phase 2: Media & External Integration (Target: Mid April)</h4>
+<p>The second phase expands the reporting capabilities to include rich media and third-party tools.</p>
+<ul>
+    <li><strong>Screen Capture Options:</strong> Explore and implement screenshot, video, and audio capture functionalities.</li>
+    <li><strong>External Tools:</strong> Investigate direct integrations and triggers for external tools (e.g., Zoom, Microsoft Teams, Loom) to streamline the user testing workflow.</li>
+    <li><strong>Continuous Equalify Integration:</strong> Ensure all captured rich media generated by user testing seamlessly attaches to the corresponding Equalify audit tracking system.</li>
+</ul>
+<h4>Phase 3: Advanced Accessibility (a11y) Integration (Target: Mid May)</h4>
+<p>The final planned phase focuses on deep integration with screen reading software to enhance the depth of bug reporting.</p>
+<ul>
+    <li><strong>Information Sharing:</strong> Research how screen readers can communicate directly with the extension to share information that contextualizes a11y bugs and enhances reporting.</li>
+    <li><strong>NVDA Integration:</strong> Explore the feasibility of building an NVDA add-on to relay information to the extension.</li>
+    <li><strong>JAWS Integration:</strong> Explore the creation of JAWS scripts for data relay.</li>
+    <li><strong>Advanced Tracking:</strong> Investigate if these advanced integrations can effectively capture user interaction data that is otherwise not exposed through conventional browser APIs.</li>
+    <li><strong>Continuous Equalify Integration:</strong> Route all advanced screen reader diagnostics directly back to the Equalify auditing platform to provide unprecedented context for a11y issues.</li>
+</ul>
+<h3>4. Document Maintenance</h3>
+<p>This SOP and roadmap should be reviewed regularly during monthly reviews.</p>
         `
     }
 ];

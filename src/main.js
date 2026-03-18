@@ -94,7 +94,7 @@ function renderGrid() {
 
     return `
       <article class="raci-card ${area.id === 'dae_team_management' ? 'pinned-card' : ''}">
-        ${area.id === 'dae_team_management' ? '<div class="pin-badge" title="Pinned Area"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg></div>' : ''}
+        ${area.id === 'dae_team_management' ? '<div class="pin-badge" title="Pinned Area"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg></div>' : ''}
         <div class="card-header">
           <h3>
             ${getProjectName(area.project)} ${area.label} 
@@ -107,8 +107,8 @@ function renderGrid() {
         </div>
 
         <div class="card-body">
-          ${renderRoleGroup('Responsible', area.r, 'r')}
-          ${renderRoleGroup('Accountable', area.a, 'a')}
+          ${renderRoleGroup('Responsible', area.r, 'r', area.responsibleRegularity)}
+          ${renderRoleGroup('Accountable', area.a, 'a', area.accountableRegularity)}
           ${renderRoleGroup('Consulted', area.c, 'c', area.meetingRegularity)}
           ${renderRoleGroup('Informed', area.i, 'i', area.informedRegularity)}
         </div>
@@ -120,7 +120,7 @@ function renderGrid() {
               ${areaSops.map(sop => `
                 <li>
                   <button class="sop-text-link" onclick="openSOPModal('${sop.id}')">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                     <span>${getProjectName(sop.project)}: ${sop.title}</span>
                   </button>
                 </li>
@@ -190,7 +190,7 @@ function renderTable() {
             <div class="area-label-group">
               <span class="p-name">${getProjectName(area.project)}</span>
               <span class="a-label">
-                ${area.id === 'dae_team_management' ? '<svg class="pin-icon-inline" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; color: var(--accent-r);"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg>' : ''}
+                ${area.id === 'dae_team_management' ? '<svg aria-hidden="true" class="pin-icon-inline" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; color: var(--accent-r);"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.68V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3v4.68a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg>' : ''}
                 ${area.label}
               </span>
               ${area.objective ? `<p class="table-area-objective">${area.objective}</p>` : ''}
@@ -321,15 +321,21 @@ function attachSOPListeners() {
   });
 }
 
+let lastFocusedElement = null;
+
 window.openSOPModal = function (sopId) {
   const sop = sops.find(s => s.id === sopId);
   if (!sop) return;
+
+  lastFocusedElement = document.activeElement;
 
   const modal = document.getElementById('sop-modal');
   const titleEl = document.getElementById('sop-modal-title');
   const bodyEl = document.getElementById('sop-modal-body');
 
   titleEl.textContent = `${getProjectName(sop.project)}: ${sop.title}`;
+  titleEl.setAttribute('tabindex', '-1'); // Ensure title can receive programmatic focus
+
   bodyEl.innerHTML = `
     <div class="sop-meta-header">
       <span><strong>Responsible:</strong> ${getPersonName(sop.responsible)}</span>
@@ -342,9 +348,15 @@ window.openSOPModal = function (sopId) {
       ${sop.content}
     </div>
   `;
+  
+  // Make the body focusable for scrolling
+  bodyEl.setAttribute('tabindex', '0');
 
   modal.showModal();
   updateUrl(sopId);
+
+  // Set focus to the modal title so screen readers start reading from top
+  titleEl.focus();
 
   // Initialize and run Mermaid for diagrams
   if (window.mermaid) {
@@ -354,16 +366,23 @@ window.openSOPModal = function (sopId) {
   }
 }
 
+// Handle dialog close (either by click, JS, or Escape key)
+document.getElementById('sop-modal').addEventListener('close', () => {
+  updateUrl();
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
+});
+
 document.getElementById('close-modal').addEventListener('click', () => {
   document.getElementById('sop-modal').close();
-  updateUrl();
 });
 
 // Close modal when clicking on the backdrop (overlay)
 document.getElementById('sop-modal').addEventListener('click', (e) => {
   if (e.target.id === 'sop-modal') {
     document.getElementById('sop-modal').close();
-    updateUrl();
   }
 });
 

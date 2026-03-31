@@ -404,5 +404,41 @@ graph TD
 <h4>Step 4: Verification &amp; Closure</h4>
 <p>Status of the assigned outstanding issue will be reviewed at the biweekly Engineering standups (Tues and Thurs at 12 CST), and upon completion, the git issue will be updated to notify the original filer the issue has been resolved.</p>
         `
+    },
+    {
+        id: 'sop_support_round_robin',
+        title: 'Support Desk and Knowledge Base Operations',
+        project: 'equalify',
+        area: 'support',
+        responsible: 'new_support_hire',
+        accountable: 'amanda',
+        effectiveDate: 'TBD',
+        reviewCadence: 'Monthly (1st Fri)',
+        reportRegularity: 'On updates',
+        content: `
+<h3>1. Purpose &amp; Scope</h3>
+<p>This SOP defines the operational procedures for Equalify's customer support. It is built around a centralized knowledge base to ensure fixed timelines, consistent feature details, and robust support consistency.</p>
+<h3>2. Round Robin Staffing Model</h3>
+<ul>
+    <li>The support desk will always be staffed by permanent employees working in a <strong>round-robin format</strong>.</li>
+    <li>The designated staff for the support rotation are: <strong>Blake, Trey, and Chris</strong>.</li>
+    <li>Support staff must maintain coverage to promptly address incoming requests according to the round-robin schedule.</li>
+</ul>
+<h3>3. Client Point of Contact</h3>
+<p>To streamline service, we will support clients by making the Equalify support portal available exclusively to <strong>one point of contact per client organization</strong>.</p>
+<h3>4. Answering Support Requests</h3>
+<ul>
+    <li><strong>Knowledge Base Answers:</strong> Permanent employees staffing the support desk must answer all requests strictly using answers sourced directly from the official knowledge base to avoid message drift.</li>
+    <li><strong>Chatbot Availability:</strong> A support bot will also be available in online chats to help deflect common issues and deliver knowledge base answers automatically.</li>
+</ul>
+<h3>5. Knowledge Base Maintenance Procedure</h3>
+<p>Consistency is paramount. Because the knowledge base must include fixed timelines and feature details that don't change, any shift requires formal updating before being communicated to clients:</p>
+<ol>
+    <li>Identify the discrepancy or change in a feature detail or project timeline.</li>
+    <li>Draft a knowledge base update, including standard answers for potential client questions regarding the change.</li>
+    <li>Submit the generated answers for review by the Accountable individual.</li>
+    <li>Upon approval, publish the update so that it is immediately available to the chat bot and the round-robin support staff.</li>
+</ol>
+        `
     }
 ];

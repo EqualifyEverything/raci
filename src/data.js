@@ -413,6 +413,8 @@ graph TD
     <li>Submit the generated answers for review by the Accountable individual.</li>
     <li>Upon approval, publish the update so that it is immediately available to the chat bot and the round-robin support staff.</li>
 </ol>
+<h3>6. Support Systems Buildout</h3>
+<p>As the support infrastructure and procedures scale, <strong>Blake</strong> is responsible for the overarching buildout and configuration of the support systems. <strong>Amanda</strong> will assist in supporting this buildout process.</p>
         `
     }
 ];

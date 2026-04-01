@@ -148,9 +148,9 @@ export const areas = [
         label: 'Student Services',
         project: 'ai_leaders',
         objective: 'Execute targeted recruitment, streamline the enrollment process, and provide comprehensive support to students throughout the AI Leaders program.',
-        meetingRegularity: 'Monthly (1st Wed)',
-        informedRegularity: 'On updates',
-        effectiveDate: 'TBD',
+        meetingRegularity: 'As needed',
+        informedRegularity: 'As needed',
+        effectiveDate: 'April 1, 2026',
         r: ['asya'],
         a: ['stefin'],
         c: ['blake'],
@@ -161,13 +161,13 @@ export const areas = [
         label: 'Management',
         project: 'ai_leaders',
         objective: 'Provide strategic direction and administrative oversight for the AI Leaders program and its constituent representation.',
-        meetingRegularity: 'Monthly (2nd Thu)',
-        informedRegularity: 'On updates',
-        effectiveDate: '2026-02-27',
+        meetingRegularity: 'As needed',
+        informedRegularity: 'As needed',
+        effectiveDate: 'April 1, 2026',
         r: ['stefin'],
         a: ['blake'],
-        c: ['gemma', 'asya'],
-        i: ['jason']
+        c: ['asya'],
+        i: ['jason', 'gemma']
     },
     {
         id: 'ail_platform_buildout',
@@ -424,9 +424,9 @@ graph TD
         area: 'admissions',
         responsible: 'asya',
         accountable: 'stefin',
-        effectiveDate: 'TBD',
-        reviewCadence: 'Monthly (1st Wed)',
-        reportRegularity: 'On updates',
+        effectiveDate: 'April 1, 2026',
+        reviewCadence: 'As needed',
+        reportRegularity: 'As needed',
         content: `
 <h3>1. Purpose</h3>
 <p>This SOP focuses on the student onboarding processes for AI Leaders.</p>
@@ -434,6 +434,23 @@ graph TD
 <p>When any user joins the <code>ai-leaders-participants</code> channel on Slack or requests to join via messages to the team, <strong>Asya</strong> will add the participant to AI Leaders.</p>
 <h3>3. Support Triage</h3>
 <p><strong>Asya</strong> will also triage low-level sign-in issues, specifically focusing on re-inviting users who don't receive invites.</p>
+        `
+    },
+    {
+        id: 'sop_ail_management',
+        title: 'Management SOPs',
+        project: 'ai_leaders',
+        area: 'ail_management',
+        responsible: 'stefin',
+        accountable: 'blake',
+        effectiveDate: 'April 1, 2026',
+        reviewCadence: 'As needed',
+        reportRegularity: 'As needed',
+        content: `
+<h3>1. Purpose</h3>
+<p>This management SOP speaks to creating new team SOPs.</p>
+<h3>2. Process</h3>
+<p>Anyone responsible and accountable for the SOP will discuss then ping Blake with the SOP in the AI Leaders slack. Blake will update the Roles &amp; Responsibilities document.</p>
         `
     }
 ];

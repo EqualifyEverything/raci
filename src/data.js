@@ -416,5 +416,24 @@ graph TD
 <h3>6. Support Systems Buildout</h3>
 <p>As the support infrastructure and procedures scale, <strong>Blake</strong> is responsible for the overarching buildout and configuration of the support systems. <strong>Amanda</strong> will assist in supporting this buildout process.</p>
         `
+    },
+    {
+        id: 'sop_ail_student_onboarding',
+        title: 'Student Onboarding',
+        project: 'ai_leaders',
+        area: 'admissions',
+        responsible: 'asya',
+        accountable: 'stefin',
+        effectiveDate: 'TBD',
+        reviewCadence: 'Monthly (1st Wed)',
+        reportRegularity: 'On updates',
+        content: `
+<h3>1. Purpose</h3>
+<p>This SOP focuses on the student onboarding processes for AI Leaders.</p>
+<h3>2. Onboarding Procedures</h3>
+<p>When any user joins the <code>ai-leaders-participants</code> channel on Slack or requests to join via messages to the team, <strong>Asya</strong> will add the participant to AI Leaders.</p>
+<h3>3. Support Triage</h3>
+<p><strong>Asya</strong> will also triage low-level sign-in issues, specifically focusing on re-inviting users who don't receive invites.</p>
+        `
     }
 ];
